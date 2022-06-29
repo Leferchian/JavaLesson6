@@ -37,9 +37,10 @@ public class StatsService {
         return (maxMounth);
     }
     public int calculateMonthWhithSaleUnderAverage (int[] sales){
+        int average=averageSalePerMonth(sales);
         int underAverage=0;
         for (int sale: sales){
-            if (sale<averageSalePerMonth(sales)){
+            if (sale<avrage){
                 underAverage++;
             }
         }
@@ -47,9 +48,10 @@ public class StatsService {
     }
 
     public int calculateMonthWhithSaleOverAverage (int[] sales){
+        int average=averageSalePerMonth(sales);
         int overAverage=0;
         for (int sale: sales){
-            if (sale>averageSalePerMonth(sales)){
+            if (sale>average){
                 overAverage++;
             }
         }
