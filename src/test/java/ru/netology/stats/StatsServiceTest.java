@@ -2,75 +2,75 @@ package ru.netology.stats;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StatsServiceTest {
 
     @Test
-    void sholdSumSales() {
-        StatsService service=new StatsService();
+    void shouldSumSales() {
+        StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 180;
 
-        int actual=service.sumSales(sales);
+        int actual = service.sumSales(sales);
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
 
 
     }
 
     @Test
     void shouldAverageSalePerMonth() {
-        StatsService service=new StatsService();
+        StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
 
-        int actual=service.averageSalePerMonth(sales);
+        int actual = service.averageSalePerMonth(sales);
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
-    void shouldMounthWhithMinSale() {
-        StatsService service=new StatsService();
+    void shouldMounthWithMinSale() {
+        StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 9;
 
-        int actual=service.mounthWhithMinSale(sales);
+        int actual = service.mounthWithMinSale(sales);
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
-    void shouldMounthWhithMaxSale() {
-        StatsService service=new StatsService();
+    void shouldMounthWithMaxSale() {
+        StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 8;
 
-        int actual=service.mounthWhithMaxSale(sales);
+        int actual = service.mounthWithMaxSale(sales);
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
-    void shouldCalculateMonthWhithSaleUnderAverage() {
-        StatsService service=new StatsService();
+    void shouldCalculateMonthWithSaleUnderAverage() {
+        StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 5;
 
-        int actual=service.calculateMonthWhithSaleUnderAverage(sales);
+        int actual = service.calculateMonthWithSaleUnderAverage(sales);
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
-    void shouldCalculateMonthWhithSaleOverAverage() {
-        StatsService service=new StatsService();
+    void shouldCalculateMonthWithSaleOverAverage() {
+        StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 5;
 
-        int actual=service.calculateMonthWhithSaleOverAverage(sales);
+        int actual = service.calculateMonthWithSaleOverAverage(sales);
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 }

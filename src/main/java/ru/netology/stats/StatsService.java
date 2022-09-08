@@ -1,57 +1,58 @@
 package ru.netology.stats;
 
 public class StatsService {
-    public int sumSales (int[] sales){
-        int allSum=0;
-        for (int sale: sales ){
-            allSum+=sale;
+    public int sumSales(int[] sales) {
+        int allSum = 0;
+        for (int sale : sales) {
+            allSum += sale;
         }
         return allSum;
     }
 
-    public int averageSalePerMonth (int[] sales){
-         return sumSales(sales) / sales.length;
+    public int averageSalePerMonth(int[] sales) {
+        return sumSales(sales) / sales.length;
     }
 
-    public int mounthWhithMinSale (int[] sales){
-        int minSale=sales[0];
-        int minMounth=0;
-        for (int i=0; i<sales.length;i++){
-            if (sales[i]<=minSale){
-                minMounth=i+1;
-                minSale=sales[i];
+    public int mounthWithMinSale(int[] sales) {
+        int minSale = sales[0];
+        int minMounth = 0;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] <= minSale) {
+                minMounth = i + 1;
+                minSale = sales[i];
             }
         }
         return (minMounth);
     }
 
-    public int mounthWhithMaxSale (int[] sales){
-        int maxSale=sales[0];
-        int maxMounth=0;
-        for (int i=0; i<sales.length;i++){
-            if (sales[i]>=maxSale){
-                maxSale=sales[i];
-                maxMounth=i+1;
+    public int mounthWithMaxSale(int[] sales) {
+        int maxSale = sales[0];
+        int maxMounth = 0;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] >= maxSale) {
+                maxSale = sales[i];
+                maxMounth = i + 1;
             }
         }
         return (maxMounth);
     }
-    public int calculateMonthWhithSaleUnderAverage (int[] sales){
-        int average=averageSalePerMonth(sales);
-        int underAverage=0;
-        for (int sale: sales){
-            if (sale<avrage){
+
+    public int calculateMonthWithSaleUnderAverage(int[] sales) {
+        int average = averageSalePerMonth(sales);
+        int underAverage = 0;
+        for (int sale : sales) {
+            if (sale < average) {
                 underAverage++;
             }
         }
         return (underAverage);
     }
 
-    public int calculateMonthWhithSaleOverAverage (int[] sales){
-        int average=averageSalePerMonth(sales);
-        int overAverage=0;
-        for (int sale: sales){
-            if (sale>average){
+    public int calculateMonthWithSaleOverAverage(int[] sales) {
+        int average = averageSalePerMonth(sales);
+        int overAverage = 0;
+        for (int sale : sales) {
+            if (sale > average) {
                 overAverage++;
             }
         }
